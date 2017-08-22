@@ -53,7 +53,7 @@ if(navigator.plugins.length == 0) {
 
 ## Languages
 In Chrome two Javascript attributes enable to obtain languages used by the user: navigator.language and navigator.languages.
-The first one is the language of the browser UI, while the second one is an array of string
+The first one is the language of the browser UI, while the second one is an array of strings
 representing the user's preferred languages.
 However, in headless mode, navigator.languages returns an empty string.
 
@@ -64,11 +64,11 @@ if(navigator.languages == "") {
 {% endhighlight %}
 
 ## WebGL 
-WebGL is an API to perform 3D rendering in an HTML canvas.
+WebGL is an API to perform 3D rendering in a HTML canvas.
 With this API, it is possible to query for the vendor of the graphic driver as well as the renderer of the graphic driver.
 
 With a vanilla Chrome and Linux, I obtain the following values for renderer and vendor: "Google SwiftShader" and "Google Inc.".
-In headless mode, I obtain "Mesa OffScreen", which is the technology used for rendering without using any sort of window system and "Brian Paul", which is the program that started the open source Mesa graphics library.
+In headless mode, I obtain "Mesa OffScreen", which is the technology used for rendering without using any sort of window system and "Brian Paul", which is the programmer that started the open source Mesa graphics library.
 
 {% highlight javascript %}
 var canvas = document.createElement('canvas');
@@ -83,7 +83,7 @@ if(vendor == "Brian Paul" && renderer == "Mesa OffScreen") {
 }
 {% endhighlight %}
 
-Not all Chrome headless will have the same values for vendor and renderer.
+Not all Chrome headless versions will have the same values for vendor and renderer.
 Others keep values that could also be found on non headless version.
 However, "Mesa Offscreen" and "Brian Paul" indicates the presence of the headless version.
 
